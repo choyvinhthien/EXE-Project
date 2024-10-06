@@ -310,7 +310,7 @@ export const products = [
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      'public/images/products/aa94ac3923328362654cfb65a6babdb96d4f86f7_fc2d6d08ea2e21c8874eebd18046863a8d1e60c3_4260695634720_1_700x700.jpg',
+      '',
     ],
     punctuation: {
       countOpinions: 81,

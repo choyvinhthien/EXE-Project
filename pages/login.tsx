@@ -33,7 +33,7 @@ const LoginPage = () => {
 
           <div className="form-block">
             <h2 className="form-block__title">Log in</h2>
-            <p className="form-block__description">Type Here</p>
+            
             
             <form className="form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form__input-row">

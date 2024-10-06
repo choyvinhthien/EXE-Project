@@ -2820,3 +2820,59 @@ h1,h2,h3,h4,h5 {
     }
   }
 }
+/* General Form Styles */
+.form__input-row {
+  font-family: Poppins;
+  font-size: 14px;
+  .radio-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    .radio {
+      position: relative;
+      padding-left: 30px;
+      cursor: pointer;
+      font-size: 14px;
+      line-height: 24px;
+
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      .radio__check {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #f1f1f1;
+        border-radius: 50%;
+        
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+      }
+
+      input:checked ~ .radio__check {
+        background-color: #B9B0B0; /* Matches yellow button color */
+        border-color: B9B0B0;
+
+        &:after {
+          display: block;
+          top: 5px;
+          left: 5px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          
+        }
+      }
+    }
+  }
+}

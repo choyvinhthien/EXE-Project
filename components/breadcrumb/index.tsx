@@ -1,3 +1,4 @@
+import React from "react";
 const Breadcrumb = () => (
   <section className="breadcrumb">
     <div className="container">

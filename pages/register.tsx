@@ -13,7 +13,6 @@ const RegisterPage = () => (
 
         <div className="form-block">
           <h2 className="form-block__title">Create an account and discover the benefits</h2>
-          <p className="form-block__description">Type Here</p>
           
           <form className="form">
             <div className="form__input-row">
@@ -31,7 +30,23 @@ const RegisterPage = () => (
             <div className="form__input-row">
               <input className="form__input" type="Password" placeholder="Password" />
             </div>
-
+            <div className="form__input-row">
+              <p>Select your account type:</p>
+              <div className="radio-wrapper">
+                <label className="radio">
+                  <input type="radio" name="accountType" value="personal" />
+                  <span className="radio__check"></span>
+                  Personal
+                </label>
+              </div>
+              <div className="radio-wrapper">
+                <label className="radio">
+                  <input type="radio" name="accountType" value="business" />
+                  <span className="radio__check"></span>
+                  Business
+                </label>
+              </div>
+            </div>
             <div className="form__info">
               <div className="checkbox-wrapper">
                 <label htmlFor="check-signed-in" className={`checkbox checkbox--sm`}>

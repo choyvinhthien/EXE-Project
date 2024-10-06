@@ -11,21 +11,21 @@ const IndexPage = () => {
 
       <section className="featured">
         <div className="container">
-          <article style={{backgroundImage: 'url(/images/featured-1.jpg)'}} className="featured-item featured-item-large">
+          <article style={{backgroundImage: 'url(/images/feature-1.png)'}} className="featured-item featured-item-large">
             <div className="featured-item__content">
               <h3>New arrivals are now in!</h3>
               <a href="#" className="btn btn--rounded">Show Collection</a>
             </div>
           </article>
           
-          <article style={{backgroundImage: 'url(/images/featured-2.jpg)'}} className="featured-item featured-item-small-first">
+          <article style={{backgroundImage: 'url(/images/feature-2.png)'}} className="featured-item featured-item-small-first">
             <div className="featured-item__content">
-              <h3>Basic SUP $29,99</h3>
+              <h3>Basic SUP $0,49</h3>
               <a href="#" className="btn btn--rounded">More details</a>
             </div>
           </article>
           
-          <article style={{backgroundImage: 'url(/images/featured-3.jpg)'}} className="featured-item featured-item-small">
+          <article style={{backgroundImage: 'url(/images/feature-3.png)'}} className="featured-item featured-item-small">
             <div className="featured-item__content">
               <h3>Sale this summer</h3>
               <a href="#" className="btn btn--rounded">VIEW ALL</a>
@@ -44,8 +44,8 @@ const IndexPage = () => {
             <li>
               <i className="icon-shipping"></i>
               <div className="data-item__content">
-                <h4>Free Shipping</h4>
-                <p>All purchases over $199 are eligible for free shipping via USPS First Class Mail.</p>
+                <h4>Many offers</h4>
+                <p>All orders over $0.49 receive a free life jacket and goggles.</p>
               </div>
             </li>
             
@@ -61,8 +61,7 @@ const IndexPage = () => {
               <i className="icon-cash"></i>
               <div className="data-item__content">
                 <h4>Money-Back Guarantee</h4>
-                <p>If an item arrived damaged or you've changed your mind, you can send it
-                back for a full refund.</p>
+                <p>If the experience is not satisfactory or you change your mind, you can return it for a full refund.</p>
               </div>
             </li>
             
