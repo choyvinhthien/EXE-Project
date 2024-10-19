@@ -35,6 +35,7 @@ export type ProductTypeList = {
   images: string[];
   discount?: string;
   currentPrice?: number;
+  price?: number;
 }
 
 export type ProductStoreType = {
