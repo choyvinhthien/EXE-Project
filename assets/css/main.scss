@@ -1533,6 +1533,7 @@ h5 {
   }
 
   .products-filter {
+    
     .btn-submit {
       display: block;
       margin-left: auto;
@@ -1618,12 +1619,12 @@ h5 {
     }
 
     .products-filter__block {
-      padding: 20px 21px;
+      padding:20px 21px;
       margin-bottom: 13px;
       border: 1px solid #E6E6E6;
 
       @include breakpoint(tablet-lg) {
-        padding: 24px 31px;
+        padding: 23px 31px;
       }
 
       >button {
