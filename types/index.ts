@@ -47,8 +47,9 @@ export type ProductStoreType = {
   thumb: string;
   price: number;
   count: number;
-  color: string;
-  size: string;
+  hireDate: string;
+  startTime: string;
+  endTime: string;
 }
 
 export type GtagEventType = {

@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "PORT=8080 next start",
     "export": "next build && next export"
   },
   "keywords": [
