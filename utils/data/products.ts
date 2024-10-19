@@ -2,15 +2,15 @@ export const products = [
   {
     id: '1',
     name: 'SUP Summer Vibes 1',
-    price: 119.99,
+    price: 0.99,
     discount: 30,
     quantityAvailable: 2,
     category: 'Type SUP',
-    currentPrice: 89.99,
+    currentPrice: 0.49,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      './images/products/web__1.jpg',
+      './images/products/product_1.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -62,15 +62,15 @@ export const products = [
   {
     id: '2',
     name: 'SUP Summer Vibes',
-    price: 119.99,
+    price: 0.99,
     discount: 30,
     quantityAvailable: 2,
     category: 'Type SUP',
-    currentPrice: 89.99,
+    currentPrice: 0.49,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '',
+      './images/products/product_2.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -122,15 +122,15 @@ export const products = [
   {
     id: '3',
     name: 'SUP Summer Vibes',
-    price: 119.99,
+    price: 0.99,
     discount: 30,
     quantityAvailable: 2,
     category: 'Type SUP',
-    currentPrice: 89.99,
+    currentPrice: 0.49,
     sizes: ['xl', 'l'], 
     colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
     images: [
-      '',
+      './images/products/product_3.png',
     ],
     punctuation: {
       countOpinions: 81,
@@ -182,15 +182,13 @@ export const products = [
   {
     id: '4',
     name: 'SUP Summer Vibes',
-    price: 119.99,
+    price: 0.99,
     discount: 30,
     quantityAvailable: 2,
     category: 'Type SUP',
-    currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
+    currentPrice: 0.49,
     images: [
-      '',
+      './images/products/product_4.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -242,15 +240,13 @@ export const products = [
   {
     id: '5',
     name: 'SUP Summer Vibes',
-    price: 119.99,
+    price: 0.99,
     discount: 30,
     quantityAvailable: 2,
     category: 'Type SUP',
-    currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
+    currentPrice: 0.49,
     images: [
-      '',
+      './images/products/product_5.jpg',
     ],
     punctuation: {
       countOpinions: 81,
@@ -302,15 +298,13 @@ export const products = [
   {
     id: '6',
     name: 'SUP Summer Vibes',
-    price: 119.99,
+    price: 0.99,
     discount: 30,
     quantityAvailable: 2,
     category: 'Type SUP',
-    currentPrice: 89.99,
-    sizes: ['xl', 'l'], 
-    colors: ['#000', '6F3E18', '#D4BE8D', '#FFF'],
+    currentPrice: 0.49,
     images: [
-      '',
+      './images/products/product_6.jpg',
     ],
     punctuation: {
       countOpinions: 81,

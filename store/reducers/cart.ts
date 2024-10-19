@@ -30,20 +30,15 @@ const cartSlice = createSlice({
   initialState,
   reducers: {
     addProduct: (state, action: PayloadAction<AddProductType>) => {
-      const cartItems = state.cartItems;
-
-      // find index of product
       const index = indexSameProduct(state, action.payload.product);
-
-      if(index !== -1) {
-        cartItems[index].count += action.payload.count;
-        return;
+      if (index !== -1) {
+        state.cartItems[index].count += action.payload.count;
+      } else {
+        return {
+          ...state,
+          cartItems: [...state.cartItems, action.payload.product]
+        };
       }
-
-      return {
-        ...state,
-        cartItems: [...state.cartItems, action.payload.product ]
-      };
     },
     removeProduct(state, action: PayloadAction<ProductStoreType>) {
       // find index of product

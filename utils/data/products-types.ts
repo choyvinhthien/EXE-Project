@@ -1,22 +1,22 @@
 export const productsTypes = [
   {
     id: '1',
-    name: 'Type Of SUP 1',
+    name: 'Business A',
     count: '172',
   },
   {
     id: '2',
-    name: 'Type Of SUP 2',
+    name: 'Business B',
     count: '131',
   },
   {
     id: '3',
-    name: 'Type Of SUP 3',
+    name: 'Business C',
     count: '56',
   },
   {
     id: '4',
-    name: 'Type Of SUP 4',
+    name: 'Business D',
     count: '8',
   },
 ];

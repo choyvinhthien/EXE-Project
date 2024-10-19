@@ -22,8 +22,6 @@ export type ProductType = {
   thumb: string;
   price: string;
   count: number;
-  color: string;
-  size: string;
   images: string[];
   discount?: string;
   currentPrice: number;
@@ -34,8 +32,6 @@ export type ProductType = {
 export type ProductTypeList = {
   id: string;
   name: string;
-  price: string;
-  color: string;
   images: string[];
   discount?: string;
   currentPrice?: number;
