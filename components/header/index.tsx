@@ -62,7 +62,7 @@ const Header = ({ isErrorPage }: HeaderType) => {
           <Link href="/products">
             Products
           </Link>
-          <Link href="#">
+          <Link href="/history/index">
           Shopping History
           </Link>
           <a href="#">Contact</a>

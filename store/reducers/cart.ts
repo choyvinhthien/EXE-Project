@@ -12,11 +12,12 @@ const initialState = {
 const indexSameProduct = (state: CartTypes, action: ProductStoreType) => {
   const sameProduct = (product: ProductStoreType) => (
     product.id === action.id && 
-    product.color === action.color && 
-    product.size === action.size
+    product.hireDate === action.hireDate &&
+    product.startTime === action.startTime &&
+    product.endTime === action.endTime
   );
 
-  return state.cartItems.findIndex(sameProduct)
+  return state.cartItems.findIndex(sameProduct);
 };
 
 type AddProductType = {

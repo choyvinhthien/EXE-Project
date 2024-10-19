@@ -1,7 +1,4 @@
 import { useState } from 'react';
-import productsColors from './../../../utils/data/products-colors';
-import productsSizes from './../../../utils/data/products-sizes';
-import CheckboxColor from './../../products-filter/form-builder/checkbox-color';
 import { useDispatch, useSelector } from 'react-redux';
 import { some } from 'lodash';
 import { addProduct } from 'store/reducers/cart';
@@ -16,41 +13,63 @@ type ProductContent = {
 const Content = ({ product }: ProductContent) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState<number>(1);
-  const [color, setColor] = useState<string>('');
-  const [itemSize, setItemSize] = useState<string>('');
 
-  const onColorSet = (e: string) => setColor(e);
-  const onSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => setItemSize(e.target.value);
+  const [hireDate, setHireDate] = useState<string>('');
+  const [startTime, setStartTime] = useState<string>('');
+  const [endTime, setEndTime] = useState<string>('');
+
+  const [errors, setErrors] = useState<string[]>([]);
 
   const { favProducts } = useSelector((state: RootState) => state.user);
   const isFavourite = some(favProducts, productId => productId === product.id);
 
   const toggleFav = () => {
-    dispatch(toggleFavProduct(
-      { 
-        id: product.id,
-      }
-    ))
+    dispatch(toggleFavProduct({ id: product.id }));
+  }
+
+  const validateInputs = () => {
+    const errorMessages: string[] = [];
+
+    // Validate hire date is not in the past
+    const today = new Date();
+    const selectedDate = new Date(hireDate);
+
+    if (selectedDate < today) {
+      errorMessages.push("Hire date cannot be in the past.");
+    }
+
+    // Validate start time is before end time
+    if (startTime >= endTime) {
+      errorMessages.push("Start time must be before end time.");
+    }
+
+    setErrors(errorMessages);
+    return errorMessages.length === 0;
   }
 
   const addToCart = () => {
+    if (!validateInputs()) {
+      return;
+    }
+
     const productToSave: ProductStoreType = { 
       id: product.id,
       name: product.name,
       thumb: product.images ? product.images[0] : '',
       price: product.currentPrice,
-      count: count,
-      color: color,
-      size: itemSize
-    }
+      count,
+      hireDate,
+      startTime,
+      endTime
+    };
 
     const productStore = {
       count,
       product: productToSave
-    }
+    };
 
     dispatch(addProduct(productStore));
-  }
+  };
 
   return (
     <section className="product-content">
@@ -68,34 +87,49 @@ const Content = ({ product }: ProductContent) => {
       </div>
 
       <div className="product-content__filters">
+        {/* Hire Date */}
         <div className="product-filter-item">
-          <h5>Color:</h5>
-          <div className="checkbox-color-wrapper">
-            {productsColors.map(type => (
-              <CheckboxColor 
-                key={type.id} 
-                type={'radio'} 
-                name="product-color" 
-                color={type.color}
-                valueName={type.label}
-                onChange={onColorSet} 
-              />
+          <h5>Select Hire Date:</h5>
+          <input 
+            type="date" 
+            value={hireDate} 
+            onChange={(e) => setHireDate(e.target.value)} 
+            className="hire-date-input" 
+          />
+        </div>
+
+        {/* Hire Time */}
+        <div className="product-filter-item">
+          <h5>Select Hire Time:</h5>
+          <div className="hire-time-inputs">
+            <input 
+              type="time" 
+              value={startTime} 
+              onChange={(e) => setStartTime(e.target.value)} 
+              className="hire-time-input" 
+              placeholder="Start Time"
+            />
+            <span>to</span>
+            <input 
+              type="time" 
+              value={endTime} 
+              onChange={(e) => setEndTime(e.target.value)} 
+              className="hire-time-input" 
+              placeholder="End Time"
+            />
+          </div>
+        </div>
+
+        {/* Error Display */}
+        {errors.length > 0 && (
+          <div className="error-messages">
+            {errors.map((error, index) => (
+              <p key={index} style={{ color: 'red' }}>{error}</p>
             ))}
           </div>
-        </div>
-        <div className="product-filter-item">
-          <h5>Size: <strong>See size table</strong></h5>
-          <div className="checkbox-color-wrapper">
-            <div className="select-wrapper">
-              <select onChange={onSelectChange}>
-                <option>Choose size</option>
-                {productsSizes.map(type => (
-                  <option value={type.label}>{type.label}</option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
+        )}
+
+        {/* Quantity */}
         <div className="product-filter-item">
           <h5>Quantity:</h5>
           <div className="quantity-buttons">
@@ -110,13 +144,14 @@ const Content = ({ product }: ProductContent) => {
             </div>
             
             <button type="submit" onClick={() => addToCart()} className="btn btn--rounded btn--yellow">Add to cart</button>
-            <button type="button" onClick={toggleFav} className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}><i className="icon-heart"></i></button>
+            <button type="button" onClick={toggleFav} className={`btn-heart ${isFavourite ? 'btn-heart--active' : ''}`}>
+              <i className="icon-heart"></i>
+            </button>
           </div>
         </div>
       </div>
     </section>
   );
 };
-  
+
 export default Content;
-    
