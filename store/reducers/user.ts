@@ -8,8 +8,7 @@ type ProductType = {
   thumb: string;
   price: string;
   count: number;
-  color: string;
-  size: string;
+  
 }
 
 type ToggleFavType = {
